@@ -1,0 +1,56 @@
+{
+  "nav": [
+    {
+      "name": "Databases",
+      "src": "img/dat.png"
+    },
+    {
+      "name": "SQL",
+      "src": "img/sql.png"
+    },
+    {
+      "name": "Status",
+      "src": "img/stat.png"
+    },
+    {
+      "name": "User accounts",
+      "src": "img/user.png"
+    },
+    {
+      "name": "Export",
+      "src": "img/exp.png"
+    },
+    {
+      "name": "Import",
+      "src": "img/imp.png"
+    },
+    {
+      "name": "Settings",
+      "src": "img/set.png"
+    },
+    {
+      "name": "Binary log",
+      "src": "img/bin.png"
+    },
+    {
+      "name": "Replication",
+      "src": "img/rep.png"
+    },
+    {
+      "name": "Charsets",
+      "src": "img/var.png"
+    },
+    {
+      "name": "Databases",
+      "src": "img/sel2.png"
+    },
+    {
+      "name": "Engines",
+      "src": "img/eng.png"
+    },
+    {
+      "name": "Plugins",
+      "src": "img/plug.png"
+    }
+  ]
+}
