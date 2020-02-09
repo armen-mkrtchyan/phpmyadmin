@@ -18,7 +18,7 @@
         <div class="col-md-2 padd_left">
             <div class="left_bord">
                 <div class="logo text-center">
-                    <img src="img/logo.png" alt="">
+                    <img src="img/logo.png" alt="" onclick="Func1(0)">
                 </div>
                 <div class="buttons_top_nav text-center">
                     <a href="#"><img src="img/home.png" alt=""></a>
@@ -56,87 +56,7 @@
 
                 <div id="accordion" role="tablist" aria-multiselectable="true">
 
-                    <!-- Accordion Item 1 -->
-                    <!--                    <div class="card my_style">-->
-                    <!--                        <div class="card-header collapse_bg" role="tab" id="accordionHeadingOne">-->
-                    <!--                            <div class="mb-0 row">-->
-                    <!--                                <div class="col-12 no-padding accordion-head">-->
-                    <!--                                    <a data-toggle="collapse" data-parent="#accordion" href="#accordionBodyOne" aria-expanded="false" aria-controls="accordionBodyOne"-->
-                    <!--                                       class="collapsed ">-->
-                    <!--                                        <div class="plus_icon">-->
-                    <!--                                        <img src="img/plus.png" alt="">-->
-                    <!--                                            <img src="img/dat.png" alt="">-->
-                    <!--                                            <span>information_schema</span>-->
-                    <!--                                        </div>-->
 
-
-                    <!--                                    </a>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-
-                    <!--                        <div id="accordionBodyOne" class="collapse" role="tabpanel" aria-labelledby="accordionHeadingOne" aria-expanded="false" data-parent="accordion">-->
-                    <!--                            <div class="card-block col-12">-->
-                    <!--                                <div class="new_db">-->
-                    <!--                                    <a href=""><img src="img/new3.png" alt=""> New</a>-->
-                    <!--                                </div>-->
-                    <!--                                <div class="character">-->
-                    <!--                                    <a href="#"><img src="img/new.png" alt=""> Character</a>-->
-                    <!--                                </div>-->
-
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-
-                    <!-- Accordion Item 2 -->
-                    <!--                    <div class="card my_style">-->
-                    <!--                        <div class="card-header collapse_bg" role="tab" id="accordionHeadingTwo">-->
-                    <!--                            <div class="mb-0 row">-->
-                    <!--                                <div class="col-12 no-padding accordion-head">-->
-                    <!--                                    <a data-toggle="collapse" data-parent="#accordion" href="#accordionBodyTwo" aria-expanded="false" aria-controls="accordionBodyTwo"-->
-                    <!--                                       class="collapsed ">-->
-                    <!--                                        <div class="plus_icon">-->
-                    <!--                                            <img src="img/plus.png" alt="">-->
-                    <!--                                            <img src="img/dat.png" alt="">-->
-                    <!--                                            <span>mysql</span>-->
-                    <!--                                        </div>-->
-                    <!--                                    </a>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-
-                    <!--                        <div id="accordionBodyTwo" class="collapse" role="tabpanel" aria-labelledby="accordionHeadingTwo" aria-expanded="false" data-parent="accordion">-->
-                    <!--                            <div class="card-block col-12">-->
-                    <!--                                <p>Accordion Item 2 - Body</p>-->
-
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-
-                    <!--                    &lt;!&ndash; Accordion Item 3 &ndash;&gt;-->
-                    <!--                    <div class="card my_style">-->
-                    <!--                        <div class="card-header collapse_bg" role="tab" id="accordionHeadingThree">-->
-                    <!--                            <div class="mb-0 row">-->
-                    <!--                                <div class="col-12 no-padding accordion-head">-->
-                    <!--                                    <a data-toggle="collapse" data-parent="#accordion" href="#accordionBodyThree" aria-expanded="false" aria-controls="accordionBodyThree"-->
-                    <!--                                       class="collapsed ">-->
-                    <!--                                        <div class="plus_icon">-->
-                    <!--                                            <img src="img/plus.png" alt="">-->
-                    <!--                                            <img src="img/dat.png" alt="">-->
-                    <!--                                            <span>performance_schema</span>-->
-                    <!--                                        </div>-->
-                    <!--                                    </a>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-
-                    <!--                        <div id="accordionBodyThree" class="collapse" role="tabpanel" aria-labelledby="accordionHeadingThree" aria-expanded="false" data-parent="accordion">-->
-                    <!--                            <div class="card-block col-12">-->
-                    <!--                                <p>Accordion Item 3 - Body</p>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-                    <!--                    </div>-->
                 </div>
 
             </div>
@@ -165,137 +85,78 @@
                     </div>
                 </nav>
             </div>
-            <div class="row mr-auto" style="display: none">
-                <div class="col-md-7">
-                    <div class="left_border_one">
-                        <div class="top_content_one">
-                            <h5 class="demo">phpMyAdmin Demo Server</h5>
-                        </div>
-                        <div class="para_demo">
-                            <p>You are using the demo server. You can do anything here, but please do not change root,
-                                debian-sys-maint and pma users. More information is available at <a
-                                        href="#">demo.phpmyadmin.net.</a></p>
-                        </div>
-                    </div>
-                    <div class="left_border_two">
-                        <div class="top_content_one">
-                            <h5 class="demo">General settings</h5>
-                        </div>
-                        <div class="server_connect">
-                            <img src="img/sel2.png" alt="">
-                            <span>Server connection collation:</span>
-                            <a href="#"><img src="img/what.png" alt=""></a>
+            <div class="row mr-auto" id="big_div_one">
 
-                            <select class="form-control-sm select_width">
-                                <option>Small select</option>
-                            </select>
-
-                        </div>
-                        <div class="more">
-                            <a href="#"> <img src="img/set.png" alt=""> More settings</a>
-                        </div>
-                    </div>
-                    <div class="left_border_three">
-                        <div class="top_content_one">
-                            <h5 class="demo">Appearance settings</h5>
-                        </div>
-                        <div class="lang">
-                            <img src="img/lang.png" alt="">
-                            <span>Language</span>
-                            <a href="#"><img src="img/what.png" alt=""></a>
-                        </div>
-                        <div class="options">
-                            <select class="form-control-sm select_width">
-                                <option>Small select</option>
-                            </select>
-                        </div>
-                        <div class="theme">
-                            <img src="img/theme.png" alt="">
-                            <span>Theme:</span>
-                            <select class="form-control-sm">
-                                <option>Small select</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="rigth_border_one">
-                        <div class="top_content_one">
-                            <h5 class="demo">Database server</h5>
-                        </div>
-                        <div class="list_one">
-                            <ul>
-                                <li>Server: phpMyAdmin demo - MySQL (192.168.30.23 via TCP/IP)</li>
-                                <li>Server type: MySQL</li>
-                                <li>Server connection: <span>SSL is not being used</span><a href="#"><img
-                                        src="img/what.png" alt=""></a></li>
-                                <li>Server version: 8.0.18 - MySQL Community Server - GPL</li>
-                                <li>Protocol version: 10</li>
-                                <li>User: root@192.168.30.20</li>
-                                <li>Server charset: UTF-8 Unicode (utf8mb4)</li>
-                            </ul>
-                        </div>
-                    </div>
-                <div class="rigth_border_two">
-                    <div class="top_content_one">
-                        <h5 class="demo">Web server</h5>
-                    </div>
-                    <div class="list_two">
-                        <ul>
-                            <li>nginx/1.10.3</li>
-                            <li>Database client version: libmysql - mysqlnd 7.4.0</li>
-                            <li>PHP extension: mysqli <a href="#"><img src="img/what.png" alt=""></a></li>
-                            <li>PHP version: 7.4.0</li>
-                        </ul>
-                    </div>
-                </div>
-                    <div class="rigth_border_three">
-                        <div class="top_content_one">
-                            <h5 class="demo">phpMyAdmin</h5>
-                        </div>
-                        <div class="list_three">
-                            <ul>
-                                <li>Version information: 5.1.0-dev, latest stable version: 4.9.4</li>
-                                <li>Git revision: 3a9b762 from master branch,</li>
-                                <li><a href="#">Documentation</a></li>
-                                <li><a href="#">Official Homepage</a></li>
-                                <li><a href="#">Contribute</a></li>
-                                <li><a href="#">Get support</a></li>
-                                <li><a href="#">List of changes</a></li>
-                                <li><a href="#">License</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <div class="row mr-auto">
-                <div class="col-md-6">
-                    <div class="Data_title">
-                        <h3>Databases</h3>
-                    </div>
-                    <div class="Crate_db">
-                        <img src="img/new2.png" alt="">
-                        <span>Create database</span>
-                        <img src="img/what.png" alt="">
-                    </div>
-                    <div class="input_create">
-                        <input type="text" id="exampleFormControlInput1" placeholder="Database name">
-                        <select id="exampleFormControlSelect1">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                        <input type="submit" value="Create" class="sub_one">
-                    </div>
-                    <div class="table_one">
-                        <fieldset>
-                            <legend>Filters</legend>
-                            Name: <input type="text">
-                        </fieldset>
-                    </div>
-                </div>
+            <div class="row mr-auto" id="new_db">
+<!--                <div class="col-md-12">-->
+<!--                    <div class="Data_title" id="data_title">-->
+<!--                        <h3>Databases</h3>-->
+<!--                    </div>-->
+<!--                    <div class="Crate_db">-->
+<!--                        <img src="img/new2.png" alt="">-->
+<!--                        <span>Create database</span>-->
+<!--                        <img src="img/what.png" alt="">-->
+<!--                    </div>-->
+<!--                    <div class="input_create">-->
+<!--                        <input type="text" id="exampleFormControlInput1" placeholder="Database name">-->
+<!--                        <select id="exampleFormControlSelect1">-->
+<!--                            <option>1</option>-->
+<!--                            <option>2</option>-->
+<!--                            <option>3</option>-->
+<!--                            <option>4</option>-->
+<!--                            <option>5</option>-->
+<!--                        </select>-->
+<!--                        <input type="submit" value="Create" class="sub_one">-->
+<!--                    </div>-->
+<!--                    <div class="table_one">-->
+<!--                        <fieldset>-->
+<!--                            <legend>Filters</legend>-->
+<!--                            <div>-->
+<!--                                Contains the word:<input type="text">-->
+<!--                            </div>-->
+<!--                        </fieldset>-->
+<!--                    </div>-->
+<!--                    <div class="table_new_db">-->
+<!--                        <table>-->
+<!--                            <tr>-->
+<!--                                <th colspan="1" class="circle_th"></th>-->
+<!--                                <th colspan="1" class="th_padd">Database</th>-->
+<!--                                <th colspan="1" class="th_padd">Comparison</th>-->
+<!--                                <th colspan="1" class="th_padd">Host server replication</th>-->
+<!--                                <th colspan="1">Act</th>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <td><input type="checkbox" id="exampleCheck1"></td>-->
+<!--                                <td><a href="#">db</a></td>-->
+<!--                                <td>utf8mb4_0900_ai_ci</td>-->
+<!--                                <td><img src="img/del3.png" alt="">Not replicated</td>-->
+<!--                                <td><a href="#"><img src="img/user.png" alt=""> Check privileges</a></td>-->
+<!--                            </tr>-->
+<!--                            <tr  class="bg_color_tr">-->
+<!--                                <td><input type="checkbox" id="exampleCheck2"></td>-->
+<!--                                <td><a href="#">formulario</a></td>-->
+<!--                                <td>utf8mb4_0900_ai_ci</td>-->
+<!--                                <td><img src="img/del3.png" alt="">Not replicated</td>-->
+<!--                                <td><a href="#"><img src="img/user.png" alt=""> Check privileges</a></td>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <td><input type="checkbox" id="exampleCheck3"></td>-->
+<!--                                <td><a href="#">information_schema</a></td>-->
+<!--                                <td>utf8_general_ci	</td>-->
+<!--                                <td><img src="img/del3.png" alt="">Not replicated</td>-->
+<!--                                <td><a href="#"><img src="img/user.png" alt=""> Check privileges</a></td>-->
+<!--                            </tr>-->
+<!--                            <tr  class="bg_color_tr">-->
+<!--                                <td><input type="checkbox" id="exampleCheck4"></td>-->
+<!--                                <td><a href="#">lab_mjeksor</a></td>-->
+<!--                                <td>utf8_unicode_ci</td>-->
+<!--                                <td><img src="img/del3.png" alt="">Not replicated</td>-->
+<!--                                <td><a href="#"><img src="img/user.png" alt=""> Check privileges</a></td>-->
+<!--                            </tr>-->
+<!--                        </table>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
 
 

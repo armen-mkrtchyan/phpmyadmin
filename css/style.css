@@ -14,6 +14,7 @@
 
 .logo {
     padding-top: 2%;
+    cursor: pointer;
 }
 
 .buttons_top_nav {
@@ -246,11 +247,34 @@
 }
 .table_one fieldset{
     border: 1px solid grey;
-    border-radius: 8px;
+    border-radius: 5px 5px 0 0;
+    height: 110px;
+    background-color: #eaeaea;
 }
 .table_one fieldset legend{
     border: 1px solid grey;
     width: 116px;
     margin-left: 21px;
     text-align: -webkit-center;
+    background-color: white;
+}
+.table_one div{
+    margin: 23px;
+}
+.table_new_db{
+    padding-left: 30px;
+}
+.table_new_db th{
+    background-color: #eaeaea;
+}
+.th_padd{
+    padding-right: 100px;
+    border-right:1px solid white;
+    color:#235a81;
+}
+.circle_th{
+    border-right:1px solid white;
+}
+.bg_color_tr{
+    background-color: #eaeaea;
 }

@@ -1,0 +1,18 @@
+{
+  "database": [
+    {
+      "title": "db",
+      "comp": "utf8mb4_0900_ai_ci",
+      "src": "img/del3.png",
+      "imgtitle": "Not replicated",
+      "actImg": "img/user.png",
+      "actTitle": "Check privileges",
+      "id_check": "exampleCheck1",
+      "id": "1"
+    }
+  ]
+}
+
+
+
+
