@@ -48,7 +48,7 @@
                 <div class="input_top_one">
                     <input type="text" class="form-control" placeholder="Type to filter,Enter to search all">
                 </div>
-                <div class="db_creata text-center">
+                <div onclick="Func1(1)" class="db_creata text-center">
                     <img src="img/new2.png" alt="">
                     <a href="#" class="href_color">New</a>
 
@@ -89,76 +89,259 @@
 
             </div>
             <div class="row mr-auto" id="new_db">
-<!--                <div class="col-md-12">-->
-<!--                    <div class="Data_title" id="data_title">-->
-<!--                        <h3>Databases</h3>-->
-<!--                    </div>-->
-<!--                    <div class="Crate_db">-->
-<!--                        <img src="img/new2.png" alt="">-->
-<!--                        <span>Create database</span>-->
-<!--                        <img src="img/what.png" alt="">-->
-<!--                    </div>-->
-<!--                    <div class="input_create">-->
-<!--                        <input type="text" id="exampleFormControlInput1" placeholder="Database name">-->
-<!--                        <select id="exampleFormControlSelect1">-->
-<!--                            <option>1</option>-->
-<!--                            <option>2</option>-->
-<!--                            <option>3</option>-->
-<!--                            <option>4</option>-->
-<!--                            <option>5</option>-->
-<!--                        </select>-->
-<!--                        <input type="submit" value="Create" class="sub_one">-->
-<!--                    </div>-->
-<!--                    <div class="table_one">-->
-<!--                        <fieldset>-->
-<!--                            <legend>Filters</legend>-->
-<!--                            <div>-->
-<!--                                Contains the word:<input type="text">-->
-<!--                            </div>-->
-<!--                        </fieldset>-->
-<!--                    </div>-->
-<!--                    <div class="table_new_db">-->
-<!--                        <table>-->
-<!--                            <tr>-->
-<!--                                <th colspan="1" class="circle_th"></th>-->
-<!--                                <th colspan="1" class="th_padd">Database</th>-->
-<!--                                <th colspan="1" class="th_padd">Comparison</th>-->
-<!--                                <th colspan="1" class="th_padd">Host server replication</th>-->
-<!--                                <th colspan="1">Act</th>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td><input type="checkbox" id="exampleCheck1"></td>-->
-<!--                                <td><a href="#">db</a></td>-->
-<!--                                <td>utf8mb4_0900_ai_ci</td>-->
-<!--                                <td><img src="img/del3.png" alt="">Not replicated</td>-->
-<!--                                <td><a href="#"><img src="img/user.png" alt=""> Check privileges</a></td>-->
-<!--                            </tr>-->
-<!--                            <tr  class="bg_color_tr">-->
-<!--                                <td><input type="checkbox" id="exampleCheck2"></td>-->
-<!--                                <td><a href="#">formulario</a></td>-->
-<!--                                <td>utf8mb4_0900_ai_ci</td>-->
-<!--                                <td><img src="img/del3.png" alt="">Not replicated</td>-->
-<!--                                <td><a href="#"><img src="img/user.png" alt=""> Check privileges</a></td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td><input type="checkbox" id="exampleCheck3"></td>-->
-<!--                                <td><a href="#">information_schema</a></td>-->
-<!--                                <td>utf8_general_ci	</td>-->
-<!--                                <td><img src="img/del3.png" alt="">Not replicated</td>-->
-<!--                                <td><a href="#"><img src="img/user.png" alt=""> Check privileges</a></td>-->
-<!--                            </tr>-->
-<!--                            <tr  class="bg_color_tr">-->
-<!--                                <td><input type="checkbox" id="exampleCheck4"></td>-->
-<!--                                <td><a href="#">lab_mjeksor</a></td>-->
-<!--                                <td>utf8_unicode_ci</td>-->
-<!--                                <td><img src="img/del3.png" alt="">Not replicated</td>-->
-<!--                                <td><a href="#"><img src="img/user.png" alt=""> Check privileges</a></td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
-<!--                    </div>-->
-<!--                </div>-->
-            </div>
+                <!--                <div class="col-md-12">-->
+                <!--                    <div class="Data_title" id="data_title">-->
+                <!--                        <h3>Databases</h3>-->
+                <!--                    </div>-->
+                <!--                    <div class="Crate_db">-->
+                <!--                        <img src="img/new2.png" alt="">-->
+                <!--                        <span>Create database</span>-->
+                <!--                        <img src="img/what.png" alt="">-->
+                <!--                    </div>-->
+                <!--                    <div class="input_create">-->
+                <!--                        <input type="text" id="exampleFormControlInput1" placeholder="Database name">-->
+                <!--                        <select id="exampleFormControlSelect1">-->
+                <!--                            <option>1</option>-->
+                <!--                            <option>2</option>-->
+                <!--                            <option>3</option>-->
+                <!--                            <option>4</option>-->
+                <!--                            <option>5</option>-->
+                <!--                        </select>-->
+                <!--                        <input type="submit" value="Create" class="sub_one">-->
+                <!--                    </div>-->
+                <!--                    <div class="table_one">-->
+                <!--                        <fieldset>-->
+                <!--                            <legend>Filters</legend>-->
+                <!--                            <div>-->
+                <!--                                Contains the word:<input type="text">-->
+                <!--                            </div>-->
+                <!--                        </fieldset>-->
+                <!--                    </div>-->
+                <!--                    <div class="table_new_db">-->
+                <!--                        <table>-->
+                <!--                            <tr>-->
+                <!--                                <th colspan="1" class="circle_th"></th>-->
+                <!--                                <th colspan="1" class="th_padd">Database</th>-->
+                <!--                                <th colspan="1" class="th_padd">Comparison</th>-->
+                <!--                                <th colspan="1" class="th_padd">Host server replication</th>-->
+                <!--                                <th colspan="1">Act</th>-->
+                <!--                            </tr>-->
+                <!--                            <tr>-->
+                <!--                                <td><input type="checkbox" id="exampleCheck1"></td>-->
+                <!--                                <td><a href="#">db</a></td>-->
+                <!--                                <td>utf8mb4_0900_ai_ci</td>-->
+                <!--                                <td><img src="img/del3.png" alt="">Not replicated</td>-->
+                <!--                                <td><a href="#"><img src="img/user.png" alt=""> Check privileges</a></td>-->
+                <!--                            </tr>-->
+                <!--                            <tr  class="bg_color_tr">-->
+                <!--                                <td><input type="checkbox" id="exampleCheck2"></td>-->
+                <!--                                <td><a href="#">formulario</a></td>-->
+                <!--                                <td>utf8mb4_0900_ai_ci</td>-->
+                <!--                                <td><img src="img/del3.png" alt="">Not replicated</td>-->
+                <!--                                <td><a href="#"><img src="img/user.png" alt=""> Check privileges</a></td>-->
+                <!--                            </tr>-->
+                <!--                            <tr>-->
+                <!--                                <td><input type="checkbox" id="exampleCheck3"></td>-->
+                <!--                                <td><a href="#">information_schema</a></td>-->
+                <!--                                <td>utf8_general_ci	</td>-->
+                <!--                                <td><img src="img/del3.png" alt="">Not replicated</td>-->
+                <!--                                <td><a href="#"><img src="img/user.png" alt=""> Check privileges</a></td>-->
+                <!--                            </tr>-->
+                <!--                            <tr  class="bg_color_tr">-->
+                <!--                                <td><input type="checkbox" id="exampleCheck4"></td>-->
+                <!--                                <td><a href="#">lab_mjeksor</a></td>-->
+                <!--                                <td>utf8_unicode_ci</td>-->
+                <!--                                <td><img src="img/del3.png" alt="">Not replicated</td>-->
+                <!--                                <td><a href="#"><img src="img/user.png" alt=""> Check privileges</a></td>-->
+                <!--                            </tr>-->
+                <!--                        </table>-->
+                <!--                    </div>-->
+                <!--                </div>-->
 
+                <div class="col-md-7">
+                    <div class="left_border_one">
+                        <div class="top_content_one">
+                            <h5 class="demo">phpMyAdmin Demo Server</h5>
+                        </div>
+                        <div class="para_demo">
+                            <p>You are using the demo server. You can do anything here, but please do not change root,
+                                debian-sys-maint and pma users. More information is available at <a href="#">demo.phpmyadmin.net.</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="left_border_two">
+                        <div class="top_content_one">
+                            <h5 class="demo">General settings</h5>
+                        </div>
+                        <div class="server_connect">
+                            <img src="img/sel2.png" alt="">
+                            <span>Server connection collation:</span>
+                            <a href="#"><img src="img/what.png" alt=""></a>
+
+                            <select class="form-control-sm select_width">
+                                <option>Small select</option>
+                            </select>
+
+                        </div>
+                        <div class="more">
+                            <a href="#"> <img src="img/set.png" alt=""> More settings</a>
+                        </div>
+                    </div>
+                    <div class="left_border_three">
+                        <div class="top_content_one">
+                            <h5 class="demo">Appearance settings</h5>
+                        </div>
+                        <div class="lang">
+                            <img src="img/lang.png" alt="">
+                            <span>Language</span>
+                            <a href="#"><img src="img/what.png" alt=""></a>
+                        </div>
+                        <div class="options">
+                            <select class="form-control-sm select_width">
+                                <option>Small select</option>
+                            </select>
+                        </div>
+                        <div class="theme">
+                            <img src="img/theme.png" alt="">
+                            <span>Theme:</span>
+                            <select class="form-control-sm">
+                                <option>Small select</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="rigth_border_one">
+                        <div class="top_content_one">
+                            <h5 class="demo">Database server</h5>
+                        </div>
+                        <div class="list_one">
+                            <ul>
+                                <li>Server: phpMyAdmin demo - MySQL (192.168.30.23 via TCP/IP)</li>
+                                <li>Server type: MySQL</li>
+                                <li>Server connection: <span>SSL is not being used</span><a href="#"><img
+                                        src="img/what.png" alt=""></a></li>
+                                <li>Server version: 8.0.18 - MySQL Community Server - GPL</li>
+                                <li>Protocol version: 10</li>
+                                <li>User: root@192.168.30.20</li>
+                                <li>Server charset: UTF-8 Unicode (utf8mb4)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="rigth_border_two">
+                        <div class="top_content_one">
+                            <h5 class="demo">Web server</h5>
+                        </div>
+                        <div class="list_two">
+                            <ul>
+                                <li>nginx/1.10.3</li>
+                                <li>Database client version: libmysql - mysqlnd 7.4.0</li>
+                                <li>PHP extension: mysqli <a href="#"><img src="img/what.png" alt=""></a></li>
+                                <li>PHP version: 7.4.0</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="rigth_border_three">
+                        <div class="top_content_one">
+                            <h5 class="demo">phpMyAdmin</h5>
+                        </div>
+                        <div class="list_three">
+                            <ul>
+                                <li>Version information: 5.1.0-dev, latest stable version: 4.9.4</li>
+                                <li>Git revision: 3a9b762 from master branch,</li>
+                                <li><a href="#">Documentation</a></li>
+                                <li><a href="#">Official Homepage</a></li>
+                                <li><a href="#">Contribute</a></li>
+                                <li><a href="#">Get support</a></li>
+                                <li><a href="#">List of changes</a></li>
+                                <li><a href="#">License</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mr-auto" style="display: none">
+                <div class="col-md-12 pt-4">
+                    <div class="table_one">
+                        <fieldset>
+                            <legend>Filters</legend>
+                            <div>
+                                Contains the word:<input type="text">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="table_new_db">
+                        <table>
+                            <tr>
+                                <th colspan="1" class="circle_th"></th>
+                                <th colspan="1" class="th_padd">Table</th>
+                                <th colspan="1" class="th_padd">Action</th>
+                                <th colspan="1" class="th_padd">Rows <img src="img/what.png" alt=""></th>
+                                <th colspan="1" class="th_padd">Type</th>
+                                <th colspan="1" class="th_padd">Collation</th>
+                                <th colspan="1" class="th_padd">Size</th>
+                                <th colspan="1">Overhead</th>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="exampleCheck6"></td>
+                                <td><a href="#">columns_priv</a></td>
+                                <td><a href="#"><img src="img/b_no_favorite.png" alt=""></a>
+                                    <a href="#"><img src="img/bd_browse.png" alt="">Browse</a>
+                                    <a href="#"><img src="img/b_props.png" alt="">Structure</a>
+                                    <a href="#"><img src="img/bd_select.png" alt="">Search</a>
+                                    <a href="#"><img src="img/b_insrow.png" alt="">Insert</a>
+                                    <a href="#"><img src="img/bd_empty.png" alt="">Empty</a>
+                                    <a href="#"><img src="img/b_drop.png" alt="">Drop</a>
+
+
+                                </td>
+                                <td class="float_td">0</td>
+                                <td>InnoDB</td>
+                                <td>utf8_bin</td>
+                                <td><a href="#">16.0 KiB</a></td>
+                                <td class="float_td">-</td>
+                            </tr>
+
+                        </table>
+                        <div class="count_table_inform">
+
+                        </div>
+                        <div class="slak mt-3">
+                            <img src="img/slak.png" alt="">
+                            <input type="checkbox" class="ml-3">
+                            <a href="#">Check all</a>
+                            <select class="input_width ml-5" id="exampleFormControlSelect1">
+                                <option>With selected:</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="hr mt-4">
+                        </div>
+                        <div class="print mt-4">
+                            <a href="#"><img src="img/print.png" alt=""> Print</a>
+                            <a href="#"><img src="img/34.png" alt="">  Data dictionary</a>
+                        </div>
+                        <div class="table_two mt-4">
+                            <fieldset>
+                                <legend><img src="img/t.png" alt=""><span>Create table</span></legend>
+                                <div class="mt-4 ml-3">
+                                    Contains the word:<input type="text">
+                                    Number of columns: <input type="number" min="1">
+                                </div>
+                                <div class="bottom_bord mt-4">
+                                    <button class="btn_border mr-2 mt-2">Go</button>
+
+                                </div>
+                            </fieldset>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 
         </div>
 
@@ -166,9 +349,9 @@
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+<!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"-->
+<!--        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"-->
+<!--        crossorigin="anonymous"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>

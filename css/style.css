@@ -278,3 +278,51 @@
 .bg_color_tr{
     background-color: #eaeaea;
 }
+.float_td{
+    float: right;
+}
+.count_table_inform{
+    background-color: #eaeaea;
+    width: 81%;
+    height: 20px;
+}
+.input_width{
+    width: 170px;
+}
+.hr{
+    width: 100%;
+    height: 1px;
+    border: 1px solid black;
+}
+table:first-of-type tr:nth-child(odd){
+    background: #DFDFDF;
+}
+.table_two fieldset{
+    border: 1px solid grey;
+    border-radius: 5px 5px 0 0;
+    height: 180px;
+    background-color: #eaeaea;
+}
+.table_two fieldset legend{
+    border: 1px solid grey;
+    width: 116px;
+    margin-left: 21px;
+    text-align: -webkit-center;
+    background-color: white;
+}
+.table_two fieldset legend span{
+    font-size: 16px;
+}
+.bottom_bord{
+    width: 100%;
+    height: 55px;
+    background-color: #d3dce3;
+    border: 1px solid grey;
+}
+.btn_border{
+    float: right;
+    border-radius: 12px 12px 12px;
+    width: 50px;
+    border: none;
+    outline: none;
+}

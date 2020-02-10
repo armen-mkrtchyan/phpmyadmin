@@ -52,9 +52,10 @@ $.ajax({
 });
 
 function Func1(arg) {
-    let container = document.getElementById("big_div_one");
+    // let container = document.getElementById("big_div_one");
+    $('#new_db').children().remove();
     if (arg === 0) {
-        container.innerHTML = `<div class="col-md-7">
+        $('#new_db').append(`<div class="col-md-7">
                     <div class="left_border_one">
                         <div class="top_content_one">
                             <h5 class="demo">phpMyAdmin Demo Server</h5>
@@ -154,19 +155,12 @@ function Func1(arg) {
                             </ul>
                         </div>
                     </div>
-                </div>`
+                </div>`);
     }
 
-}
-
-
-$.ajax({
-    url: 'json/database.json',
-    type: 'GET',
-    dataType: 'json',
-    success: function (data) {
-        data.database.forEach((y) => {
-            $('#new_db').append(`<div class="col-md-12">
+    if (arg === 1) {
+        $('#new_db').children().remove();
+        $('#new_db').append(`<div class="col-md-12" >
                     <div class="Data_title" id="data_title">
                         <h3>Databases</h3>
                     </div>
@@ -195,7 +189,7 @@ $.ajax({
                         </fieldset>
                     </div>
                     <div class="table_new_db">
-                        <table>
+                        <table id="table_new_db_id" class="table-striped">
                             <tr>
                                 <th colspan="1" class="circle_th"></th>
                                 <th colspan="1" class="th_padd">Database</th>
@@ -203,22 +197,42 @@ $.ajax({
                                 <th colspan="1" class="th_padd">Host server replication</th>
                                 <th colspan="1">Act</th>
                             </tr>
-                            <tr id="${y.id}">
+                            
+                            
+                        </table>
+                    </div>
+                </div>`);
+
+        $.ajax({
+            url: 'json/database.json',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                data.database.forEach((y, k) => {
+                    $('#table_new_db_id').append(`
+                       
+                        <tr id="${y.id}">
                                 <td><input type="checkbox" id="${y.id}"></td>
                                 <td><a href="#">${y.title}</a></td>
                                 <td>${y.comp}</td>
-                                <td><img src="${y.src}" alt="">Not replicated</td>          
-                                <td><a href="#"><img src="${y.actImg}" alt="">Check privileges</a></td>
-                            </tr>
+                                <td><img src="img/del3.png" alt="">Not replicated</td>
+                               <td><a href="#"><img src="img/user.png" alt="">Check privileges</a></td>
+                        </tr>
                         
+                    `)
 
-                        </table>
-                    </div>
-                </div>`)
-        })
 
+                })
+            }
+        });
+    }
+
+    if (arg > 1) {
 
     }
 
-});
+}
+
+
+
 
