@@ -3,47 +3,18 @@
   {
     "name": "information_schema",
     "src":"img/plus.png",
-    "id": "12",
-    "childe": [
-      {
-        "lasttitle": "New",
-        "src": "img/new3.png"
-      },
-      {
-        "lasttitle": "Character",
-        "src": "img/new.png"
-      }
-    ]
-  },
-  {
-    "name": "mysql",
-    "src":"img/plus.png",
-    "id": "112",
-    "childe": [
-      {
-        "lasttitle": "New",
-        "src": "img/new3.png"
-      },
-      {
-        "lasttitle": "Columans",
-        "src": "img/new.png"
-      }
-    ]
+    "id": "1"
+
   },
     {
     "name": "mysql",
     "src":"img/plus.png",
-    "id": "113",
-    "childe": [
-      {
-        "lasttitle": "New",
-        "src": "img/new3.png"
-      },
-      {
-        "lasttitle": "Columans",
-        "src": "img/new.png"
-      }
-    ]
-  }
+    "id": "2"
+  },
+    {
+      "name": "PHP",
+      "src":"img/plus.png",
+      "id": "3"
+    }
 ]
 }

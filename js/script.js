@@ -3,41 +3,68 @@ $.ajax({
     dataType: "json",
     type: "GET",
     success: function (data) {
-        data.collapse.forEach((y, i) => {
+
+        data.collapse.forEach((y) => {
             $('#accordion').append(`<div class="card my_style">
                         <div class="card-header collapse_bg" role="tab" id="accordionHeadingOne${y.id}">
                             <div class="mb-0 row">
                                 <div class="col-12 no-padding accordion-head">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#accordionBodyOne${y.id}" aria-expanded="false" aria-controls="accordionBodyOne"
-                                       class="collapsed ">
+                                       class="collapsed get-id" data-id = '${y.id}'>
                                         <div class="plus_icon">
                                         <img src="${y.src}" alt="">
                                             <img src="img/dat.png" alt="">
                                             <span>${y.name}</span>
                                         </div>
-
-
                                     </a>
                                 </div>
                             </div>
                         </div>
-
                         <div id="accordionBodyOne${y.id}" class="collapse" role="tabpanel" aria-labelledby="accordionHeadingOne" aria-expanded="false" data-parent="accordion">
                             <div class="card-block col-12">
-                                <div class="new_db">
+                                <div class="new_db" id = '${y.id}'>
                                     <a href="#"><img src="img/new3.png" alt=""> New</a>
-                                </div>
-                                <div class="character">
-                                    <a href="#"><img src="img/new.png" alt=""> Character</a>
                                 </div>
 
                             </div>
                         </div>
-                    </div>`)
+                </div> `);
         })
 
     }
 });
+
+$(document).on('click','.get-id',function () {
+    let id = $(this).attr('data-id');
+    $.ajax({
+        url: "json/table_two.json",
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            $('.remove-data-'+id).remove();
+            data.table.forEach((i, k) => {
+                if (id == i.db_id){
+                    $('#' + id).append(`<div class="card my_style remove-data-${id}">
+                        <div class="card-header collapse_bg" role="tab" id="accordionHeadingOne${i.id}">
+                            <div class="mb-0 row">
+                                <div class="col-12 no-padding accordion-head">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#accordionBodyOne${i.id}" aria-expanded="false" aria-controls="accordionBodyOne"
+                                       class="collapsed get-id" data-id = '${i.id}'>
+                                        <div class="plus_icon">
+                                        <img src="${i.src}" alt="">
+                
+                                            <span>${i.lasttitle}</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div> `);
+                }
+            })
+        }
+    });
+});
+
 
 $.ajax({
     url: 'json/nav.json',
