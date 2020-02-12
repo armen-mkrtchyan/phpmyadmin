@@ -1,3 +1,4 @@
+
 $.ajax({
     url: "json/collapse.json",
     dataType: "json",
@@ -11,7 +12,7 @@ $.ajax({
                                 <div class="col-12 no-padding accordion-head">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#accordionBodyOne${y.id}" aria-expanded="false" aria-controls="accordionBodyOne"
                                        class="collapsed get-id" data-id = '${y.id}'>
-                                        <div class="plus_icon">
+                                        <div class="plus_icon" onclick="Func1(2)">
                                         <img src="${y.src}" alt="">
                                             <img src="img/dat.png" alt="">
                                             <span>${y.name}</span>
@@ -79,8 +80,8 @@ $.ajax({
 });
 
 function Func1(arg) {
-    // let container = document.getElementById("big_div_one");
     $('#new_db').children().remove();
+    $(".hell").remove();
     if (arg === 0) {
         $('#new_db').append(`<div class="col-md-7">
                     <div class="left_border_one">
@@ -187,6 +188,7 @@ function Func1(arg) {
 
     if (arg === 1) {
         $('#new_db').children().remove();
+        $(".hell").remove();
         $('#new_db').append(`<div class="col-md-12" >
                     <div class="Data_title" id="data_title">
                         <h3>Databases</h3>
@@ -245,7 +247,7 @@ function Func1(arg) {
                                 <td><img src="img/del3.png" alt="">Not replicated</td>
                                <td><a href="#"><img src="img/user.png" alt="">Check privileges</a></td>
                         </tr>
-                        
+                       
                     `)
 
 
@@ -253,13 +255,101 @@ function Func1(arg) {
             }
         });
     }
+    if(arg === 2){
+        $('#new_db').children().remove();
+        $(".hell").remove();
+        $('#tables').append(`<div class="col-md-12 pt-4 hell">
+                    <div class="table_one">
+                        <fieldset>
+                            <legend>Filters</legend>
+                            <div>
+                                Contains the word:<input type="text">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="table_new_db">
+                        <table id="tables_db">
+                            <tr>
+                                <th colspan="1" class="circle_th"></th>
+                                <th colspan="1" class="th_padd">Table</th>
+                                <th colspan="1" class="th_padd">Action</th>
+                                <th colspan="1" class="th_padd">Rows <img src="img/what.png" alt=""></th>
+                                <th colspan="1" class="th_padd">Type</th>
+                                <th colspan="1" class="th_padd">Collation</th>
+                                <th colspan="1" class="th_padd">Size</th>
+                                <th colspan="1">Overhead</th>
+                            </tr>
+                        </table>
+                        <div class="count_table_inform">
 
-    if (arg > 1) {
+                        </div>
+                        <div class="slak mt-3">
+                            <img src="img/slak.png" alt="">
+                            <input type="checkbox" class="ml-3">
+                            <a href="#">Check all</a>
+                            <select class="input_width ml-5" id="exampleFormControlSelect1">
+                                <option>With selected:</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="hr mt-4">
+                        </div>
+                        <div class="print mt-4">
+                            <a href="#"><img src="img/print.png" alt=""> Print</a>
+                            <a href="#"><img src="img/34.png" alt="">  Data dictionary</a>
+                        </div>
+                        <div class="table_two mt-4">
+                            <fieldset>
+                                <legend><img src="img/t.png" alt=""><span>Create table</span></legend>
+                                <div class="mt-4 ml-3">
+                                    Contains the word:<input type="text">
+                                    Number of columns: <input type="number" min="1">
+                                </div>
+                                <div class="bottom_bord mt-4">
+                                    <button class="btn_border mr-2 mt-2">Go</button>
 
+                                </div>
+                            </fieldset>
+
+                        </div>
+                    </div>
+
+                </div>`)
+        $.ajax({
+            url:'json/filterTable.json',
+            type:'GET',
+            dataType:'json',
+            success:function (data) {
+                console.log(data);
+                data.filtertable.forEach((j) => {
+                    console.log(j.row);
+                    $('#tables_db').append(`<tr>
+                                <td><input type="checkbox" id="exampleCheck6"></td>
+                                <td><a href="#">${j.title}</a></td>
+                                <td><a href="#"><img src="img/b_no_favorite.png" alt=""></a>
+                                    <a href="#"><img src="img/bd_browse.png" alt="">Browse</a>
+                                    <a href="#"><img src="img/b_props.png" alt="">Structure</a>
+                                    <a href="#"><img src="img/bd_select.png" alt="">Search</a>
+                                    <a href="#"><img src="img/b_insrow.png" alt="">Insert</a>
+                                    <a href="#"><img src="img/bd_empty.png" alt="">Empty</a>
+                                    <a href="#"><img src="img/b_drop.png" alt="">Drop</a>
+
+
+                                </td>
+                                <td class="float_td">${j.rows}</td>
+                                <td>${j.type}</td>
+                                <td>${j.collattion}</td>
+                                <td><a href="#">${j.size}</a></td>
+                                <td class="float_td">-</td>
+                            </tr>`)
+                })
+            }
+        });
     }
 
 }
-
-
 
 

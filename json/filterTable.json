@@ -1,7 +1,20 @@
 {
-  "filterTable": [
+  "filtertable": [
     {
-      "id_check": ""
+      "id": "1",
+      "title":"columns_priv",
+      "rows": "0",
+      "type": "InnoDB",
+      "collattion": "utf8_bin",
+      "size": "16.0 KiB"
+    },
+    {
+      "id": "1",
+      "title":"columnsdsd",
+      "rows": "0",
+      "type": "InnoDB",
+      "collattion": "utf8_bin_ci",
+      "size": "18.0 KiB"
     }
   ]
 }

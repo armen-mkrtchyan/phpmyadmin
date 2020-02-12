@@ -18,7 +18,7 @@
         <div class="col-md-2 padd_left">
             <div class="left_bord">
                 <div class="logo text-center">
-                    <img src="img/logo.png" alt="" onclick="Func1(0)">
+                    <img src="img/logo.png" alt="" onclick="Func1(0)" id="logo">
                 </div>
                 <div class="buttons_top_nav text-center">
                     <a href="#"><img src="img/home.png" alt=""></a>
@@ -260,87 +260,87 @@
                     </div>
                 </div>
             </div>
-            <div class="row mr-auto" style="display: none">
-                <div class="col-md-12 pt-4">
-                    <div class="table_one">
-                        <fieldset>
-                            <legend>Filters</legend>
-                            <div>
-                                Contains the word:<input type="text">
-                            </div>
-                        </fieldset>
-                    </div>
-                    <div class="table_new_db">
-                        <table>
-                            <tr>
-                                <th colspan="1" class="circle_th"></th>
-                                <th colspan="1" class="th_padd">Table</th>
-                                <th colspan="1" class="th_padd">Action</th>
-                                <th colspan="1" class="th_padd">Rows <img src="img/what.png" alt=""></th>
-                                <th colspan="1" class="th_padd">Type</th>
-                                <th colspan="1" class="th_padd">Collation</th>
-                                <th colspan="1" class="th_padd">Size</th>
-                                <th colspan="1">Overhead</th>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" id="exampleCheck6"></td>
-                                <td><a href="#">columns_priv</a></td>
-                                <td><a href="#"><img src="img/b_no_favorite.png" alt=""></a>
-                                    <a href="#"><img src="img/bd_browse.png" alt="">Browse</a>
-                                    <a href="#"><img src="img/b_props.png" alt="">Structure</a>
-                                    <a href="#"><img src="img/bd_select.png" alt="">Search</a>
-                                    <a href="#"><img src="img/b_insrow.png" alt="">Insert</a>
-                                    <a href="#"><img src="img/bd_empty.png" alt="">Empty</a>
-                                    <a href="#"><img src="img/b_drop.png" alt="">Drop</a>
+            <div class="row mr-auto"  id="tables">
+<!--                <div class="col-md-12 pt-4">-->
+<!--                    <div class="table_one">-->
+<!--                        <fieldset>-->
+<!--                            <legend>Filters</legend>-->
+<!--                            <div>-->
+<!--                                Contains the word:<input type="text">-->
+<!--                            </div>-->
+<!--                        </fieldset>-->
+<!--                    </div>-->
+<!--                    <div class="table_new_db">-->
+<!--                        <table>-->
+<!--                            <tr>-->
+<!--                                <th colspan="1" class="circle_th"></th>-->
+<!--                                <th colspan="1" class="th_padd">Table</th>-->
+<!--                                <th colspan="1" class="th_padd">Action</th>-->
+<!--                                <th colspan="1" class="th_padd">Rows <img src="img/what.png" alt=""></th>-->
+<!--                                <th colspan="1" class="th_padd">Type</th>-->
+<!--                                <th colspan="1" class="th_padd">Collation</th>-->
+<!--                                <th colspan="1" class="th_padd">Size</th>-->
+<!--                                <th colspan="1">Overhead</th>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <td><input type="checkbox" id="exampleCheck6"></td>-->
+<!--                                <td><a href="#">columns_priv</a></td>-->
+<!--                                <td><a href="#"><img src="img/b_no_favorite.png" alt=""></a>-->
+<!--                                    <a href="#"><img src="img/bd_browse.png" alt="">Browse</a>-->
+<!--                                    <a href="#"><img src="img/b_props.png" alt="">Structure</a>-->
+<!--                                    <a href="#"><img src="img/bd_select.png" alt="">Search</a>-->
+<!--                                    <a href="#"><img src="img/b_insrow.png" alt="">Insert</a>-->
+<!--                                    <a href="#"><img src="img/bd_empty.png" alt="">Empty</a>-->
+<!--                                    <a href="#"><img src="img/b_drop.png" alt="">Drop</a>-->
 
 
-                                </td>
-                                <td class="float_td">0</td>
-                                <td>InnoDB</td>
-                                <td>utf8_bin</td>
-                                <td><a href="#">16.0 KiB</a></td>
-                                <td class="float_td">-</td>
-                            </tr>
+<!--                                </td>-->
+<!--                                <td class="float_td">0</td>-->
+<!--                                <td>InnoDB</td>-->
+<!--                                <td>utf8_bin</td>-->
+<!--                                <td><a href="#">16.0 KiB</a></td>-->
+<!--                                <td class="float_td">-</td>-->
+<!--                            </tr>-->
 
-                        </table>
-                        <div class="count_table_inform">
+<!--                        </table>-->
+<!--                        <div class="count_table_inform">-->
 
-                        </div>
-                        <div class="slak mt-3">
-                            <img src="img/slak.png" alt="">
-                            <input type="checkbox" class="ml-3">
-                            <a href="#">Check all</a>
-                            <select class="input_width ml-5" id="exampleFormControlSelect1">
-                                <option>With selected:</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
-                        <div class="hr mt-4">
-                        </div>
-                        <div class="print mt-4">
-                            <a href="#"><img src="img/print.png" alt=""> Print</a>
-                            <a href="#"><img src="img/34.png" alt="">  Data dictionary</a>
-                        </div>
-                        <div class="table_two mt-4">
-                            <fieldset>
-                                <legend><img src="img/t.png" alt=""><span>Create table</span></legend>
-                                <div class="mt-4 ml-3">
-                                    Contains the word:<input type="text">
-                                    Number of columns: <input type="number" min="1">
-                                </div>
-                                <div class="bottom_bord mt-4">
-                                    <button class="btn_border mr-2 mt-2">Go</button>
+<!--                        </div>-->
+<!--                        <div class="slak mt-3">-->
+<!--                            <img src="img/slak.png" alt="">-->
+<!--                            <input type="checkbox" class="ml-3">-->
+<!--                            <a href="#">Check all</a>-->
+<!--                            <select class="input_width ml-5" id="exampleFormControlSelect1">-->
+<!--                                <option>With selected:</option>-->
+<!--                                <option>2</option>-->
+<!--                                <option>3</option>-->
+<!--                                <option>4</option>-->
+<!--                                <option>5</option>-->
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                        <div class="hr mt-4">-->
+<!--                        </div>-->
+<!--                        <div class="print mt-4">-->
+<!--                            <a href="#"><img src="img/print.png" alt=""> Print</a>-->
+<!--                            <a href="#"><img src="img/34.png" alt="">  Data dictionary</a>-->
+<!--                        </div>-->
+<!--                        <div class="table_two mt-4">-->
+<!--                            <fieldset>-->
+<!--                                <legend><img src="img/t.png" alt=""><span>Create table</span></legend>-->
+<!--                                <div class="mt-4 ml-3">-->
+<!--                                    Contains the word:<input type="text">-->
+<!--                                    Number of columns: <input type="number" min="1">-->
+<!--                                </div>-->
+<!--                                <div class="bottom_bord mt-4">-->
+<!--                                    <button class="btn_border mr-2 mt-2">Go</button>-->
 
-                                </div>
-                            </fieldset>
+<!--                                </div>-->
+<!--                            </fieldset>-->
 
-                        </div>
-                    </div>
+<!--                        </div>-->
+<!--                    </div>-->
 
-                </div>
+<!--                </div>-->
             </div>
 
         </div>
