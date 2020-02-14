@@ -1,10 +1,8 @@
-
 $.ajax({
     url: "json/collapse.json",
     dataType: "json",
     type: "GET",
     success: function (data) {
-
         data.collapse.forEach((y) => {
             $('#accordion').append(`<div class="card my_style">
                         <div class="card-header collapse_bg" role="tab" id="accordionHeadingOne${y.id}">
@@ -12,9 +10,13 @@ $.ajax({
                                 <div class="col-12 no-padding accordion-head">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#accordionBodyOne${y.id}" aria-expanded="false" aria-controls="accordionBodyOne"
                                        class="collapsed get-id" data-id = '${y.id}'>
-                                        <div class="plus_icon" onclick="Func1(2)">
-                                        <img src="${y.src}" alt="">
-                                            <img src="img/dat.png" alt="">
+                                        <div class="plus_icon d-flex" onclick="Func1(2)">
+                                        <div id="load${y.id}" style="width: 16px">
+                                        <img src="${y.src}" id="load${y.id}">
+                                        </div>
+                                        <div>
+                                         <img src="img/dat.png" alt="logo">
+                                         </div>
                                             <span>${y.name}</span>
                                         </div>
                                     </a>
@@ -35,16 +37,30 @@ $.ajax({
     }
 });
 
-$(document).on('click','.get-id',function () {
+$(document).on('click', '.get-id', function () {
     let id = $(this).attr('data-id');
+    // console.log(id);
+    let prop = true;
+    if ($(this).hasClass("change")) {
+        $(this).removeClass("change");
+        prop = false;
+    } else {
+        $(this).addClass("change");
+        prop = true;
+    }
+    // console.log(pp);
     $.ajax({
         url: "json/table_two.json",
         type: "GET",
         dataType: "json",
+        beforeSend: function () {
+            $("#load" + id).children().remove();
+            $("#load" + id).append(`<img src="img/load.gif">`);
+        },
         success: function (data) {
-            $('.remove-data-'+id).remove();
+            $('.remove-data-' + id).remove();
             data.table.forEach((i, k) => {
-                if (id == i.db_id){
+                if (id == i.db_id) {
                     $('#' + id).append(`<div class="card my_style remove-data-${id}">
                         <div class="card-header collapse_bg" role="tab" id="accordionHeadingOne${i.id}">
                             <div class="mb-0 row">
@@ -60,6 +76,15 @@ $(document).on('click','.get-id',function () {
                                 </div>
                             </div>
                         </div> `);
+                    setTimeout(function () {
+                        $("#load" + id).children().remove();
+                        if (prop == true) {
+                            $("#load" + id).append(`<img src="img/minus.png">`);
+                        } else {
+                            $("#load" + id).append(`<img src="img/plus.png">`);
+                        }
+                    }, 300)
+
                 }
             })
         }
@@ -255,7 +280,7 @@ function Func1(arg) {
             }
         });
     }
-    if(arg === 2){
+    if (arg === 2) {
         $('#new_db').children().remove();
         $(".hell").remove();
         $('#tables').append(`<div class="col-md-12 pt-4 hell">
@@ -319,13 +344,12 @@ function Func1(arg) {
 
                 </div>`)
         $.ajax({
-            url:'json/filterTable.json',
-            type:'GET',
-            dataType:'json',
-            success:function (data) {
-                console.log(data);
+            url: 'json/filterTable.json',
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                // console.log(data);
                 data.filtertable.forEach((j) => {
-                    console.log(j.row);
                     $('#tables_db').append(`<tr>
                                 <td><input type="checkbox" id="exampleCheck6"></td>
                                 <td><a href="#">${j.title}</a></td>
