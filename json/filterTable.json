@@ -15,6 +15,14 @@
       "type": "InnoDB",
       "collattion": "utf8_bin_ci",
       "size": "18.0 KiB"
+    },
+    {
+      "id": "1",
+      "title":"columnsdsd",
+      "rows": "0",
+      "type": "InnoDB",
+      "collattion": "utf8_bin_ci",
+      "size": "18.0 KiB"
     }
   ]
 }

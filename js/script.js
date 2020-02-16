@@ -25,7 +25,7 @@ $.ajax({
                         </div>
                         <div id="accordionBodyOne${y.id}" class="collapse" role="tabpanel" aria-labelledby="accordionHeadingOne" aria-expanded="false" data-parent="accordion">
                             <div class="card-block col-12">
-                                <div class="new_db" id = '${y.id}'>
+                                <div class="new_db" id = '${y.id}' onclick="openModal()">
                                     <a href="#"><img src="img/new3.png" alt=""> New</a>
                                 </div>
 
@@ -48,7 +48,6 @@ $(document).on('click', '.get-id', function () {
         $(this).addClass("change");
         prop = true;
     }
-    // console.log(pp);
     $.ajax({
         url: "json/table_two.json",
         type: "GET",
@@ -306,7 +305,7 @@ function Func1(arg) {
                             </tr>
                         </table>
                         <div class="count_table_inform">
-
+                            
                         </div>
                         <div class="slak mt-3">
                             <img src="img/slak.png" alt="">
@@ -342,13 +341,13 @@ function Func1(arg) {
                         </div>
                     </div>
 
-                </div>`)
+                </div>`);
+
         $.ajax({
             url: 'json/filterTable.json',
             type: 'GET',
             dataType: 'json',
             success: function (data) {
-                // console.log(data);
                 data.filtertable.forEach((j) => {
                     $('#tables_db').append(`<tr>
                                 <td><input type="checkbox" id="exampleCheck6"></td>
@@ -369,11 +368,24 @@ function Func1(arg) {
                                 <td><a href="#">${j.size}</a></td>
                                 <td class="float_td">-</td>
                             </tr>`)
-                })
+                });
+
+                document.getElementsByClassName('count_table_inform')[0].innerHTML =
+                    `${data.filtertable.length} tables`
+
+
             }
         });
     }
 
 }
 
+function openModal() {
+    let modal = document.createElement('div');
+    modal.setAttribute('class', 'modalView');
+    let innerModal = document.createElement('div');
+    innerModal.setAttribute('class', 'modalInner');
+    modal.appendChild(innerModal);
+    document.getElementsByTagName('body')[0].appendChild(modal);
+}
 
