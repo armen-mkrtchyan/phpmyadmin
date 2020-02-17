@@ -336,3 +336,57 @@ table:first-of-type tr:nth-child(odd){
     background-color: red;
     margin: 0 auto;
 }
+
+.bottom_Show{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #a2d246;
+    background-color: #ebf8a4;
+    border-radius: 6px 6px 0 0;
+    border-bottom: none;
+}
+.query_select_bord{
+    width: 100%;
+    height:40px;
+    background-color: #e5e5e5;
+
+}
+.select a{
+    color:#770088;
+    border-bottom: 2px dotted;
+    font-size: 11px;
+}
+.cm-operator{
+    color: #ff00fd;
+    font-size: 11px;
+}
+.cm-keyword{
+    color:#770088;
+    font-size: 11px;
+}
+.cm-variable{
+    font-size: 11px;
+    color: #05a;
+}
+.tools{
+    width: 100%;
+    height:40px;
+    background-color: #d3dce3;
+    border-radius: 0 0 6px 6px;
+}
+.tools_rigth_form{
+    float: right;
+}
+.navigation_table{
+    width: 57%;
+    height: 45px;
+}
+.form_width{
+    width: 50px;
+}
+.form_width_two{
+    width: 160px;
+}
+.navigation_table:hover{
+    background-color:#d3dce3;
+}

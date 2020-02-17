@@ -25,17 +25,19 @@ $.ajax({
                         </div>
                         <div id="accordionBodyOne${y.id}" class="collapse" role="tabpanel" aria-labelledby="accordionHeadingOne" aria-expanded="false" data-parent="accordion">
                             <div class="card-block col-12">
-                                <div class="new_db" id = '${y.id}' onclick="openModal()">
+                                <div class="new_db" id = '${y.id}'">
                                     <a href="#"><img src="img/new3.png" alt=""> New</a>
                                 </div>
 
                             </div>
                         </div>
                 </div> `);
+
         })
 
     }
 });
+
 
 $(document).on('click', '.get-id', function () {
     let id = $(this).attr('data-id');
@@ -66,7 +68,7 @@ $(document).on('click', '.get-id', function () {
                                 <div class="col-12 no-padding accordion-head">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#accordionBodyOne${i.id}" aria-expanded="false" aria-controls="accordionBodyOne"
                                        class="collapsed get-id" data-id = '${i.id}'>
-                                        <div class="plus_icon">
+                                        <div class="plus_icon" id="latscoll">
                                         <img src="${i.src}" alt="">
                 
                                             <span>${i.lasttitle}</span>
@@ -380,12 +382,17 @@ function Func1(arg) {
 
 }
 
-function openModal() {
-    let modal = document.createElement('div');
-    modal.setAttribute('class', 'modalView');
-    let innerModal = document.createElement('div');
-    innerModal.setAttribute('class', 'modalInner');
-    modal.appendChild(innerModal);
-    document.getElementsByTagName('body')[0].appendChild(modal);
-}
+
+
+$.ajax({
+   type:'GET',
+   dataType:'json',
+   url:'json/teble_two.json',
+    success:function(data){
+        data.teble_two.forEach((x) =>{
+            console.log(x.id);
+        })
+    }
+});
+
 
