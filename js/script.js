@@ -68,7 +68,7 @@ $(document).on('click', '.get-id', function () {
                                 <div class="col-12 no-padding accordion-head">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#accordionBodyOne${i.id}" aria-expanded="false" aria-controls="accordionBodyOne"
                                        class="collapsed get-id" data-id = '${i.id}'>
-                                        <div class="plus_icon" id="latscoll">
+                                        <div class="plus_icon" id="latscoll" onclick="Func1(3)">
                                         <img src="${i.src}" alt="">
                 
                                             <span>${i.lasttitle}</span>
@@ -379,20 +379,133 @@ function Func1(arg) {
             }
         });
     }
+    if(arg === 3){
+        $('#new_db').children().remove();
+        $(".hell").remove();
+        $('#db').append(`<div class="col-md-12">
+                    <div class="bottom_Show ml-1 mt-2">
+                        <div class="show_content ml-3 mt-2">
+                            <img src="img/check.png" alt="">
+                            <span>Showing rows 0 - 4 (5 total, Query took 0.0004 seconds.)</span>
+                        </div>
+                    </div>
+                    <div class="query_select_bord ml-1">
+                        <div class="select">
+                            <div class="sql-highlight ml-3 pt-2">
+                                <a href="#">SELECT</a>
+                                <span class="cm-operator">*</span>
+                                <span class="cm-keyword">FROM</span>
+                                <span class="cm-variable">\`db\`</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tools ml-1">
+                        <div class="tools_rigth_form mt-1 mr-1">
+                            <input type="checkbox" class="check">
+                            <label>Profiling</label>
+                            [<a href="#">Edit inline</a>]
+                            [<a href="#">Edit</a>]
+                            [<a href="#">Explain SQL</a>]
+                            [<a href="#">Create PHP code </a>]
+                            [<a href="#">Refresh</a>]
+                        </div>
+
+                    </div>
+                    <div class="navigation_table ml-1 mt-2">
+                        <div class="bord">
+                            <input type="checkbox" class="check2 ml-4 mt-3">
+                            <label class="ml-2">Show all</label>
+                            |
+                            <span class="ml-2">Number of rows:</span>
+                            <select class="form_width ml-2">
+                                <option>25</option>
+                                <option>50</option>
+                                <option>100</option>
+                                <option>250</option>
+                                <option>500</option>
+                            </select>
+                            <span class="ml-3">Filter rows:</span>
+                            <input type="text" class="form ml-2" placeholder="Search this table">
+                            <span>Sort by key:</span>
+                            <select class="form_width_two ml-2">
+                                <option>25</option>
+                                <option>50</option>
+                                <option>100</option>
+                                <option>250</option>
+                                <option>500</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="responsivetable pl-1">
+                        <table id="select_db_one">
+                          <tr>
+                                <th class="pad_rigth">
+                                    <a href="#"> <img src="img/2t.png" alt=""></a>
+                                </th>
+                                <th class="pad_rigth">
+                                    <a href="#">Host</a>
+                                </th>
+                                <th class="pad_rigth">
+                                    <a href="#">Db</a>
+                                </th>
+                                <th class="pad_rigth">
+                                    <a href="#">User</a>
+                                </th>
+                                <th class="pad_rigth">
+                                    <a href="#">Select_priv</a>
+                                </th>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div class="print_ignore mt-3 ml-3">
+                        <img src="img/slak.png" alt="">
+                        <input type="checkbox" class="">
+                        <a href="#">Check all</a>
+                        <span>With selected: </span>
+                        <a href="#"><img src="img/paint.png" alt=""> Edit</a>
+                        <a href="#"><img src="img/b_insrow.png" alt=""> Copy</a>
+                        <a href="#"><img src="img/b_drop.png" alt=""> Delete</a>
+                        <a href="#"><img src="img/exp.png" alt=""> Export</a>
+                    </div>
+                </div>`)
+        $.ajax({
+            type:'GET',
+            dataType:'json',
+            url:'json/select_db.json',
+            success:function(data){
+                data.teble_two.forEach((u) =>{
+                    $('#select_db_one').append(`
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="">
+                                    <a href="#"><img src="img/b_insrow.png" alt=""> Copy</a>
+                                    <a href="#"><img src="img/paint.png" alt=""> Edit</a>
+                                    <a href="#"><img src="img/b_drop.png" alt=""> Delete</a>
+                                </td>
+                                <td>
+                                       %
+                                </td>
+                                <td>
+                                    <a href="#">${u.Db}</a>
+                                </td>
+                                <td>
+                                    <a href="#">${u.user}</a>
+                                </td>
+                                <td>
+                                    Y
+                                </td>
+                            </tr>`)
+                })
+            }
+        });
+    }
 
 }
 
 
 
-$.ajax({
-   type:'GET',
-   dataType:'json',
-   url:'json/teble_two.json',
-    success:function(data){
-        data.teble_two.forEach((x) =>{
-            console.log(x.id);
-        })
-    }
-});
+
 
 

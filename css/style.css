@@ -390,3 +390,13 @@ table:first-of-type tr:nth-child(odd){
 .navigation_table:hover{
     background-color:#d3dce3;
 }
+.tilte_tables{
+    background: #ccc;
+}
+.pad_rigth{
+    padding-right:40px;
+    border-right: 1px solid white;
+}
+.color_bg{
+
+}
