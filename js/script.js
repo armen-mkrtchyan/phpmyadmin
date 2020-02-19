@@ -382,7 +382,7 @@ function Func1(arg) {
     if(arg === 3){
         $('#new_db').children().remove();
         $(".hell").remove();
-        $('#db').append(`<div class="col-md-12">
+        $('#new_db').append(`<div class="col-md-12">
                     <div class="bottom_Show ml-1 mt-2">
                         <div class="show_content ml-3 mt-2">
                             <img src="img/check.png" alt="">
@@ -475,7 +475,7 @@ function Func1(arg) {
             dataType:'json',
             url:'json/select_db.json',
             success:function(data){
-                data.teble_two.forEach((u) =>{
+                data.db.forEach((x) =>{
                     $('#select_db_one').append(`
                             <tr>
                                 <td>
@@ -488,10 +488,10 @@ function Func1(arg) {
                                        %
                                 </td>
                                 <td>
-                                    <a href="#">${u.Db}</a>
+                                    <a href="#">${x.Db}</a>
                                 </td>
                                 <td>
-                                    <a href="#">${u.user}</a>
+                                    <a href="#">${x.user}</a>
                                 </td>
                                 <td>
                                     Y
